@@ -1,0 +1,76 @@
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(15, 168, 249);
+}
+body input
+{
+    height:20px;
+    width: 90%;
+
+}
+button
+{
+    color: rgb(15, 168, 249);
+}
+#layer
+{
+    display: grid;
+    grid-template:
+        "title_part" 50px
+        "adding_part" 200px
+        "listing_part" auto;
+    height: 700px;
+    width: 600px;
+    border: 1px solid #333;
+  
+}
+#title_part
+{
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    grid-area: title_part;
+    background-color: rgb(219, 216, 215);
+    border: 1px solid #333;
+    
+}
+#title_part > h1
+{
+    margin-top: 2px;
+}
+#adding_part
+{
+    display: block;
+    grid-area: adding_part;
+    border: 1px solid #333;
+}
+#listing_part
+{
+    display: block;
+    grid-area: listing_part;
+    justify-content: space-between;
+    border: 1px solid #333;
+}
+#todos
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 20px;
+    border: 1px solid #333;
+}
+#todos h3
+{
+    margin: 0px;
+}
+#todos img
+{
+    height: 10px;
+    width: 10px;
+}
+
+ 
