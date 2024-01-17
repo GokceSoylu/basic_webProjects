@@ -77,11 +77,19 @@ button
     color: white;
     border-radius: 5%;
 }
+#listing_part ul
+{
+    list-style: none;
+}
 #listing_part li
 {
     border:1px solid #c4c1c1;
+    border-radius: 5%;;
     height: 20px;
     width: 95%;
+    display:inline-flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #listing_part img
 {
