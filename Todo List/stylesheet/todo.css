@@ -77,26 +77,18 @@ button
     color: white;
     border-radius: 5%;
 }
-#todos
+#listing_part li
 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
+    border:1px solid #c4c1c1;
     height: 20px;
-    border: 1px solid #c4c1c1;
+    width: 95%;
 }
-#todos h3
-{
-    margin: 0px;
-}
-#todos img
+#listing_part img
 {
     height: 10px;
     width: 10px;
-    
 }
-#todos button
+#clear_todo
 {
     background-color:transparent;
     
