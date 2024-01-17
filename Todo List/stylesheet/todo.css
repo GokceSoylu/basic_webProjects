@@ -3,29 +3,30 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(15, 168, 249);
 }
-body input
+h1{
+    margin-left: 15px;
+}
+input
 {
     height:20px;
-    width: 90%;
-
+    width: 95%;
 }
 button
 {
-    color: rgb(15, 168, 249);
+    background-color: rgb(53, 164, 211);
+    border-style:hidden ;
 }
 #layer
 {
     display: grid;
     grid-template:
-        "title_part" 50px
+        "title_part" 42px
         "adding_part" 200px
         "listing_part" auto;
     height: 700px;
-    width: 600px;
-    border: 1px solid #333;
-  
+    width: 900px;
+    border: 1px solid #c4c1c1;
 }
 #title_part
 {
@@ -33,9 +34,16 @@ button
     align-items: center;
     justify-content: start;
     grid-area: title_part;
-    background-color: rgb(219, 216, 215);
-    border: 1px solid #333;
+    background-color: rgb(241, 238, 237);
+    border: 1px solid #c4c1c1;
     
+}
+#adding_part button
+{
+    height: 25px;
+    width: 65px;
+    border-radius: 5%;
+    color:white;
 }
 #title_part > h1
 {
@@ -45,23 +53,38 @@ button
 {
     display: block;
     grid-area: adding_part;
-    border: 1px solid #333;
+    align-items: center;
+    border: 1px solid #c4c1c1;
+    justify-content: space-between;
+}
+#adding_part input, button{
+    margin: 15px;
 }
 #listing_part
 {
     display: block;
     grid-area: listing_part;
     justify-content: space-between;
-    border: 1px solid #333;
+    border: 1px solid #c4c1c1;
+}
+#listing_part input, button, #todos{
+    margin:15px;
+}
+#listing_part button
+{
+    height: 25px;
+    width: 65px;
+    color: white;
+    border-radius: 5%;
 }
 #todos
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 95%;
     height: 20px;
-    border: 1px solid #333;
+    border: 1px solid #c4c1c1;
 }
 #todos h3
 {
@@ -71,6 +94,12 @@ button
 {
     height: 10px;
     width: 10px;
+    
+}
+#todos button
+{
+    background-color:transparent;
+    
 }
 
  
