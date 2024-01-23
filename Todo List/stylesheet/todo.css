@@ -98,7 +98,10 @@ button
 }
 #clear_todo
 {
-    background-color:transparent;
+    height: 25px;
+    width: 65px;
+    color: white;
+    border-radius: 5%;
     
 }
 
