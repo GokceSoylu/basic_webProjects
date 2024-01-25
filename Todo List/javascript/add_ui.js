@@ -2,6 +2,7 @@ const the_list=document.querySelector("#todo_ul");
 
 function new_li()
 {
+    const txt_todo=value_addTxt.value.trim();
     const li=document.createElement("li");
     const h3=document.createElement("h3");
     const img=document.createElement("img");
