@@ -10,8 +10,9 @@ function new_li()
     h3.innerHTML=txt_todo;
     img.src="/Users/necmiyesoyla/basic_webProjects/Todo List/svgs/cross.svg";
     
-    li.appendChild(img);
+    
     li.appendChild(h3);
+    li.appendChild(img);
     the_list.appendChild(li);
 }//😂😂 amk böyle hatanıııınn 
 // eğer belli bilinen bir tag koyacaksan tırnak içinde yazarız ama bizim oluşturduğumuz
