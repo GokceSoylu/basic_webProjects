@@ -8,6 +8,7 @@ function delete_todo(e)
         const d_todo=e.target.parentElement;
         d_todo.remove();
         removefromStorage(d_todo.textContent);
+        
 
     }
 }

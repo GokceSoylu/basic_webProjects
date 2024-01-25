@@ -10,4 +10,5 @@ clear_button.addEventListener("click",event=>
     localStorage.clear();
     todos=[];
     localStorage.setItem("todos",JSON.stringify(todos)); 
+    alert("all todos are deleted");
 })
