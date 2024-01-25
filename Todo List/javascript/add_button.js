@@ -3,7 +3,7 @@ const value_addTxt=document.querySelector("#add_text");
 //hmm ayrıca bunlar tek dosya altında olduğu için public gibi düşün dosyalar arası değilşkenler kullanılabilir 
 const add_button=document.querySelector("#add_todo");
 
-const todos=[];
+let todos=[];
 add_button.addEventListener("click",event=>
 {
     const txt_todo=value_addTxt.value.trim();//hocam neden içeride çalışıoda dılarıda çalışmıyo

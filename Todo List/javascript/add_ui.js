@@ -7,6 +7,7 @@ function new_li()
     const h3=document.createElement("h3");
     const img=document.createElement("img");
     
+    li.className="list-group-item";
     h3.innerHTML=txt_todo;
     img.src="/Users/necmiyesoyla/basic_webProjects/Todo List/svgs/cross.svg";
     img.className="fa fa-remove";
