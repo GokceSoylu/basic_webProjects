@@ -9,7 +9,7 @@ function new_li()
     
     h3.innerHTML=txt_todo;
     img.src="/Users/necmiyesoyla/basic_webProjects/Todo List/svgs/cross.svg";
-    
+    img.className="fa fa-remove";
     
     li.appendChild(h3);
     li.appendChild(img);
