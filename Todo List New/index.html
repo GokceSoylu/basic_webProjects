@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    <!--yukarıda bootsrap özelliklerin ekledik-->
+    <title>Todo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card w-100 mt-3"> <!--w-100=>width:100% demek m=>margin t=>top-->
+                
+                
+                
+                <div class="card-header">
+                    <h5 classs="card-title">Todo List</h5>
+                </div>
+                
+                
+                <div class="card-body">
+                    <form id="add_form" class="mt-2">
+                        <input type="text" class="form-control mt-2" id="add_input" placeholder="enter todo" aria-describedby="todo">
+                        <button id="add_button" type="submit" class="btn btn-warning mt-4 btn-sml">Add Todo</button>
+                    </form>
+                    <hr>
+                </div>
+                <hr>
+                
+                
+                <div class="card-body">
+                    <h5 class="card-title">Todos</h5>
+                    <form class="mt-2" id="form_todo_list" name="form2">
+                        <input type="text" id="search_todo" class="form-control mt-3" placeholder="search todo"> 
+                    </form>
+                    <ul id="todo_list" class="list-group">
+
+                    </ul>
+                    <a href="#" id="clear_button" class="btn btn-warning btn-sml mt-3">Clear Todos</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
