@@ -1,5 +1,5 @@
-const firstCardBody=document.querySelector(".card-body")[0];
-const secondCardBody=document.querySelector(".card-body")[1];
+const firstCardBody=document.querySelectorAll(".card-body")[0];//hocam çok önemli bir şety söylicem bay zamanımı alıp delieten bir bug
+const secondCardBody=document.querySelectorAll(".card-body")[1];//! querySelector sadece id seçer eğer clawsss yada başka bşir seçme metodu kullancxaksan Aşll eklemelisn!!!
 const add_form=document.querySelector("#add_form");
 const todoList=document.querySelector("#todo_list");
 let todos=[];
