@@ -1,4 +1,0 @@
-function remove_todo()
-{
-    
-}
