@@ -11,6 +11,7 @@ function runEvents()
 {
     add_form.addEventListener("submit",addTodo);//hocam burada direkt parentez koymaman onemli eğer direkt parentez koyarsan event geçekleşmese dahi function çalışır
     secondCardBody.addEventListener("click",removeUI);
+    
 }
 
 function addTodo()
@@ -18,12 +19,16 @@ function addTodo()
     const text=document.querySelector("#add_input").value.trim();
 
     if(text==null || text=="")
-        show_alert("warning","alanı buş bırakmayınız!");
+        show_alert("warning","alanı bos bırakmayınız!");
     else
     {
+        console.log("in else");
         addTodoUI(text);
+        console.log("after addtodoUI fun");
         addStorage(text);
+        console.log("after addstorage fun");
         alert("success","todo eklendi");
+        console.log("after showalert fun");
     }
 
 }
@@ -51,18 +56,11 @@ function addTodoUI(text)
 
 function addStorage(text)
 {
-    check_todos();
     todos.push(text);
     localStorage.setItem("todos",todos);
 }
 
-function check_todos()
-{
-    if(todos==null)
-        todos=[];
-    else
-        todos=JSON.parse(localStorage.getItem("todos"));
-}
+
 
 function removeUI(e)
 {
@@ -72,7 +70,7 @@ function removeUI(e)
     }
 }
 
-function show_alert(type,massage)
+function show_alert(type,massage)//todo lets look at here later
 {
     const alert=document.createElement("div");
     div.className='alert alert-${type}';
