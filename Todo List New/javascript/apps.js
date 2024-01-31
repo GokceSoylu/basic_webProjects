@@ -57,14 +57,32 @@ function addStorage(text)
     localStorage.setItem("todos",todos);
 }
 
-
-
 function removeUI(e)
 {
     if(e.target.className=="fa fa-remove")
     {
-        console.log("this=> ",e.target);
+        const deleteTodo=e.target.parentElement.parentElement;
+        deleteTodo.remove();
+        removeStorage(deleteTodo);
+        show_alert("success","todo deleted")
     }
+}
+
+function removeStorage(deleteTodo)
+{
+    todos.forEach(function(item,i)
+    {
+        console.log("in");
+        console.log("type of deleteTodo = ",typeof deleteTodo.textContent);
+        console.log("type of item = ",typeof item )
+        if(item===deleteTodo.textContent)
+        {
+                        todos.splice(i,1);
+                        console.log("if in");
+
+        }
+    });
+    localStorage.setItem("todos",JSON.stringify(todos));
 }
 
 function show_alert(type,message)//todo lets look at here later
