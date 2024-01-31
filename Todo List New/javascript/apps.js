@@ -2,6 +2,8 @@ const firstCardBody=document.querySelectorAll(".card-body")[0];//hocam çok öne
 const secondCardBody=document.querySelectorAll(".card-body")[1];//! querySelector sadece id seçer eğer clawsss yada başka bşir seçme metodu kullancxaksan Aşll eklemelisn!!!
 const add_form=document.querySelector("#add_form");
 const todoList=document.querySelector("#todo_list");
+
+
 let todos=[];
 
 runEvents();
@@ -17,18 +19,13 @@ function runEvents()
 function addTodo()
 {
     const text=document.querySelector("#add_input").value.trim();
-
     if(text==null || text=="")
         show_alert("warning","alanı bos bırakmayınız!");
     else
     {
-        console.log("in else");
         addTodoUI(text);
-        console.log("after addtodoUI fun");
         addStorage(text);
-        console.log("after addstorage fun");
-        alert("success","todo eklendi");
-        console.log("after showalert fun");
+        show_alert("success","todo eklendi");
     }
 
 }
@@ -70,10 +67,10 @@ function removeUI(e)
     }
 }
 
-function show_alert(type,massage)//todo lets look at here later
+function show_alert(type,message)//todo lets look at here later
 {
-    const alert=document.createElement("div");
-    div.className='alert alert-${type}';
+    const div=document.createElement("div");
+    div.className=`alert alert-${type}`;
     div.textContent=message;
 
     firstCardBody.appendChild(div);
