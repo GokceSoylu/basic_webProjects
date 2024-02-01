@@ -13,9 +13,28 @@ runEvents();
 function runEvents()
 {
     add_form.addEventListener("submit",addTodo);//hocam burada direkt parentez koymaman onemli eğer direkt parentez koyarsan event geçekleşmese dahi function çalışır
+    document.addEventListener("DOMContentLoaded",page_load);
     secondCardBody.addEventListener("click",removeUI);
     clearTodo.addEventListener("click",clear_todo);
     
+}
+
+function page_load()
+{
+    check_todo();
+    todos.forEach(function(item,itr)
+    {
+        addTodoUI(item);
+    });
+}
+
+function check_todo()
+{
+    if(localStorage.getItem("todos")===null) //localStorage.getItem("sth")= string
+         todos=[];
+    else
+        todos=localStorage.getItem("todos").split(",");
+    console.log("try",typeof todos);
 }
 
 function addTodo() 
