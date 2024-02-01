@@ -11,6 +11,7 @@ runEvents()
 {
     todo_add.addEventListener("submit",addTodo);
     card_body2.addEventListener("click",deleteTodo);
+
 }
 
 //Addind todo method
@@ -71,6 +72,21 @@ function deleteTodo(e)
 {
     if(e.target.className==="fa fa-remove")
     {
-
+        const delet=e.target.parent.parent;
+        delet.remove();
+        deleteFromStoragge(delet.textContent);
+        showAlert("success","todo deleted succesfully");
     }
+}
+
+function deleteFromStoragge(text)
+{
+    todos.forEach(function(item,itr)
+    {
+        if(item===text)
+        {
+            todos.splice(item,1);
+            localStorage.setItem("todos",JSON.stringify(todos));
+        }
+    })
 }
