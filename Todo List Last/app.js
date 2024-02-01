@@ -1,17 +1,17 @@
 //elementleri seçelim
-const todo_add=document.querySelector("add_button");
+const todo_add=document.querySelector("#add_button");
 const todo_text=document.querySelector("#todo_add");
 const todo_ul=document.querySelector("#todo_ul");
 const card_body2=document.querySelectorAll(".card-body")[1];
 const card_body1=document.querySelectorAll(".card-body")[0];
 const clear_button=document.querySelector("#clear_button");
-const search_todo=document.querySelectorAll("#search_todo");
+const search_todo=document.querySelector("#search_todo");
 
 let todos=[];
 
 runEvents();
 
-runEvents()
+function runEvents()
 {
     todo_add.addEventListener("submit",addTodo);
     card_body2.addEventListener("click",deleteTodo);
@@ -56,17 +56,17 @@ function addTodoStorage(text)
 
 function checkStorage()
 {
-    if(todos===null)
+    if(localStorage.getItem("todos")===null)
         todos=[];
     else
     {
-        todos=JSON.parse(localStorage.getItem("todos"),",");
+        todos=(JSON.getItem("todos")).split(",");
     }
 }
 
 function showAlert(type,message)
 {
-    div=createElement("div");
+    div=document.createElement("div");
     div.className=`alert alert-${type}`;
     card_body1.appendChild(div);
     setTimeout(function()
@@ -100,12 +100,13 @@ function deleteFromStoragge(text)
 
 function clearAllTodos()
 {
-    const list_todo=document.querySelector("#todo_ul");
+    const list_todo=document.querySelectorAll(".list-group-iteem");
     list_todo.forEach(function(item,itr)
     {
         item.remove();
         deleteFromStoragge(item.textContent);
     })
+    showAlert("success","all todos are cleaned");
 
 }
 
@@ -120,7 +121,7 @@ function pageLoaded()
 
 function searchTodo()
 {
-    const text=search_todo.value.ToLowerCase().trim();
+    const text=search_todo.value.toLowerCase().trim();
     checkStorage();
     todos.forEach(function(item,itr)
     {
