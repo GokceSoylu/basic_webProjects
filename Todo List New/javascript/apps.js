@@ -2,6 +2,7 @@ const firstCardBody=document.querySelectorAll(".card-body")[0];//hocam çok öne
 const secondCardBody=document.querySelectorAll(".card-body")[1];//! querySelector sadece id seçer eğer clawsss yada başka bşir seçme metodu kullancxaksan Aşll eklemelisn!!!
 const add_form=document.querySelector("#add_form");
 const todoList=document.querySelector("#todo_list");
+const clearTodo=document.querySelector("#clear_button");
 
 
 let todos=[];
@@ -13,12 +14,13 @@ function runEvents()
 {
     add_form.addEventListener("submit",addTodo);//hocam burada direkt parentez koymaman onemli eğer direkt parentez koyarsan event geçekleşmese dahi function çalışır
     secondCardBody.addEventListener("click",removeUI);
+    clearTodo.addEventListener("click",clear_todo);
     
 }
 
-function addTodo()
+function addTodo() 
 {
-    const text=document.querySelector("#add_input").value.trim();
+    let text=document.querySelector("#add_input").value.trim();
     if(text==null || text=="")
         show_alert("warning","alanı bos bırakmayınız!");
     else
@@ -26,6 +28,7 @@ function addTodo()
         addTodoUI(text);
         addStorage(text);
         show_alert("success","todo eklendi");
+        document.querySelector("#add_input").value="";
     }
 
 }
@@ -44,11 +47,9 @@ function addTodoUI(text)
     i.className="fa fa-remove";//yahu bu fa fa-remove ne
     //neden svg faln çarpı eklemeek için img kullanmadı?
     //hocam teknoloji gelişti. bu eklediğin class çarpıyı endisi oluşturuyor yaa
-
     a.appendChild(i);
     li.appendChild(a);
     todoList.appendChild(li);
-
 }
 
 function addStorage(text)
@@ -72,17 +73,23 @@ function removeStorage(deleteTodo)
 {
     todos.forEach(function(item,i)
     {
-        console.log("in");
-        console.log("type of deleteTodo = ",typeof deleteTodo.textContent);
-        console.log("type of item = ",typeof item )
         if(item===deleteTodo.textContent)
-        {
-                        todos.splice(i,1);
-                        console.log("if in");
-
-        }
+            todos.splice(i,1);
     });
     localStorage.setItem("todos",JSON.stringify(todos));
+}
+
+function clear_todo()
+{   
+    let todo_list=document.querySelectorAll(".list-group-item");
+    todo_list.forEach(function(item,itr)
+    {
+        removeStorage(item.textContent);
+        item.remove();
+    })
+    todos=[];
+    localStorage.setItem("todos",JSON.stringify(todos));
+    show_alert("success","todos cleaned");
 }
 
 function show_alert(type,message)//todo lets look at here later
