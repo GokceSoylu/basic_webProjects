@@ -11,24 +11,24 @@
     <div class="container">
         <div class="row">
             <div class="card w-100 mt-3">
-                <div class="card-title m-3">
-                    <h3>TODO LIST</h3>
+                <div class="card-header">
+                    <h3 class="card-title">TODO LIST</h3>
                 </div>
-                <hr>
-                <div class="card-body mt-3">
-                    <form class="todo-form">
-                        <input id="todo_add" type="text" placeholder="enter todo">
-                        <button class="btn btn-success btn-sm" id="add_button">Add Todo</button>
+
+                <div class="card-body mt-2">
+                    <form class="todo-form" id="todo_in">
+                        <input id="todo_add" type="text" class="form-control" placeholder="enter todo">
+                        <button class="btn btn-success btn-sm mt-4" id="add_button">Add Todo</button>
                     </form>
                 </div>
                 <hr>
                 <div class="card-body mt-3">
                     <h3>Todos</h3>
-                    <input type="text" placeholder="search todo" id="search_todo">
-                    <ul id="todo_ul">
+                    <input type="text" class="form-control" placeholder="search todo" id="search_todo">
+                    <ul id="todo_ul" class="list-group">
 
                     </ul>
-                    <button type="submit" class="btn btn-success btn-sm" id="clear_button">Clear Todo</button>
+                    <button type="submit" class="btn btn-success btn-sm mt-4" id="clear_button">Clear Todo</button>
                 </div>
             </div>
         </div>

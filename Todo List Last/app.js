@@ -1,5 +1,5 @@
 //elementleri seçelim
-const todo_add=document.querySelector("#add_button");
+const todo_add=document.querySelector("#todo_in");//?
 const todo_text=document.querySelector("#todo_add");
 const todo_ul=document.querySelector("#todo_ul");
 const card_body2=document.querySelectorAll(".card-body")[1];
@@ -23,24 +23,30 @@ function runEvents()
 //Addind todo method
 function addTodo()
 {
-    const text=todo_text.value.trim();
-    addTodoUI(text);
-    addTodoStorage(text);
-    showAlert("success","todo added");
-    todo_text.value="";
+    let text=todo_text.value.trim();
+    if(text==null || text=="")
+        showAlert("warning","please enter todo");
+    else
+    {
+        addTodoUI(text);
+        addTodoStorage(text);
+        showAlert("success","todo added");
+        todo_text.value="";
+    }
 }
 
 function addTodoUI(text)
 {
-    li=document.createElement("li");
-    li.className="list-group-item";
-    
-    a=document.createElement("a");
-    a.href="#";
+    const li=document.createElement("li");
+    li.className="list-group-item d-flex justify-content-between";
+    li.textContent=text;
 
-    i=document.createElement("i");
+    const a=document.createElement("a");
+    a.href="#";
+    a.className="delete item";
+
+    const i=document.createElement("i");
     i.className="fa fa-remove";
-    i.textContent=text;
 
     a.appendChild(i);
     li.appendChild(a);
@@ -49,9 +55,8 @@ function addTodoUI(text)
 
 function addTodoStorage(text)
 {
-    checkStorage();
     todos.push(text);
-    localStorage.setItem("todos",JSON.stringify(todos));
+    localStorage.setItem("todos",todos);
 }
 
 function checkStorage()
@@ -60,7 +65,7 @@ function checkStorage()
         todos=[];
     else
     {
-        todos=(JSON.getItem("todos")).split(",");
+        todos=(localStorage.getItem("todos")).split(",");
     }
 }
 
@@ -68,6 +73,7 @@ function showAlert(type,message)
 {
     div=document.createElement("div");
     div.className=`alert alert-${type}`;
+    div.textContent=message;
     card_body1.appendChild(div);
     setTimeout(function()
     {
@@ -79,7 +85,7 @@ function deleteTodo(e)
 {
     if(e.target.className==="fa fa-remove")
     {
-        const delet=e.target.parent.parent;
+        const delet=e.target.parentElement.parentElement;
         delet.remove();
         deleteFromStoragge(delet.textContent);
         showAlert("success","todo deleted succesfully");
@@ -91,21 +97,21 @@ function deleteFromStoragge(text)
     todos.forEach(function(item,itr)
     {
         if(item===text)
-        {
             todos.splice(item,1);
-            localStorage.setItem("todos",JSON.stringify(todos));
-        }
-    })
+    });
+    localStorage.setItem("todos",JSON.stringify(todos));
 }
 
 function clearAllTodos()
 {
-    const list_todo=document.querySelectorAll(".list-group-iteem");
+    const list_todo=document.querySelectorAll(".list-group-item");
     list_todo.forEach(function(item,itr)
-    {
-        item.remove();
+    {   
         deleteFromStoragge(item.textContent);
-    })
+        item.remove();
+    });
+    todos=[];
+    localStorage.setItem("todos",JSON.stringify(todos));
     showAlert("success","all todos are cleaned");
 
 }
@@ -115,7 +121,8 @@ function pageLoaded()
     checkStorage();
     todos.forEach(function(item,itr)
     {
-        addTodoUI(item);
+        if(item!=[])
+            addTodoUI(item);
     });
 }
 
