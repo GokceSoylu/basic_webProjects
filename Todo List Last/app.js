@@ -128,16 +128,17 @@ function pageLoaded()
 
 function searchTodo()
 {
-    const text=search_todo.value.toLowerCase().trim();
+    const text=search_todo.value.toLowerCase().trim();//anlılk değer
+    const allTodo=document.querySelectorAll(".list-group-item");//all todo
     checkStorage();
-    todos.forEach(function(item,itr)
+    allTodo.forEach(function(item,itr)
     {
-        if(item.textContent.ToLowerCase().includes(text))
+        if(item.textContent.toLowerCase().includes(text))
         {
-            item.setAttribute("style","block");
+            item.setAttribute("style","display:block");
         }
         else
-            item.setAttribute("style","none !important");
+            item.setAttribute("style","display:none !important");
     });
     
 }
