@@ -47,7 +47,10 @@ function addLi(txt,e)
 function deleteLi()
 {
     const usersLi=document.querySelectorAll(".list-group-item")
-    usersLi.forEach(user =>user.remove())
+    usersLi.forEach(user =>{
+        if(user.parentElement.parentElement.className==="output")
+            user.remove()
+    })
 }
 function getData(key){
     return new Promise((resolve,reject)=>{
