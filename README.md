@@ -23,3 +23,13 @@ the last one (todo list last folder) was ipprowed by combination my info and tea
 the project for computing amoount of product which are the customer bought. 
 
 It has no a good interface becouse the goal was learning oop js part
+
+## Basic Instagram 
+
+what is that project? I don't know😅
+
+Goal is learning promise and some practice 
+
+in the poroject you print usernames on secreen later you can access info you want
+
+for example the user's coments posts etc
