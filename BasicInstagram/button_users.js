@@ -9,13 +9,20 @@ btn_data_show.addEventListener("click",(event)=>{
 
     event.preventDefault()
     console.log("hi")
+    let user_id
     const user=document.querySelector("#user_txt").value.trim()
     const input_info=document.querySelector("#data_type").value.toLowerCase().trim()
-    console.log(user)
-    getData(input_info)
+    getData("users")
     .then((data)=>{
-         if(data.username===user)
-            addLi(data.body,datas)
+        data.forEach(the_user=>{
+            console.log("in foreach")
+            if(the_user.username===user)
+                user_id=the_user.id
+        })
+        return getData(`${input_info}?userId=${user_id}`)
+    })
+    .then((data)=>{
+        data.forEach(itr=>addLi(itr.body,datas))
     })
 })
 button_users.addEventListener("click",(event)=>{
