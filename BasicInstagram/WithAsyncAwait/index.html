@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Basic Instagram</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card w-100">
+                <div class="card-header">
+                    <h4 class="card-title">Instagram Data Accessing Program</h4>
+                </div>
+                <div class="card-body">
+                    <form class="output">
+                        <button id="users_btn" class="btn btn-warning">Show Users</button>
+                        <button id="users_hide" class="btn btn-warning">Hide Users</button>
+                        <ul id="userNames" class="form-control justify-content-between mt-3 list-group">
+                            
+                        </ul>
+                    </form>
+                </div>
+                <div class="card-body">
+                    <h5>Which info do you want to access</h5>
+                    <form class="input">
+                        <input type="text" id="user_txt" class="form-control mt-3" placeholder="enter the user name please">
+                        <input type="text" id="data_type" class="form-control mt-3 mb-3" placeholder="(comments, posts,albus,photos,todos)">
+                        <button id="show_data" class="btn btn-warning">Show</button>
+                        <ul id="datas" class="form-control justify-content-between">
+                            
+                        </ul>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <script src="apps.js"></script>
+</body>
+</html>
