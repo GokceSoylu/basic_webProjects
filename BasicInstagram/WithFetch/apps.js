@@ -8,26 +8,27 @@ const datas=document.querySelector("#datas")
 btn_data_show.addEventListener("click",(event)=>{
 
     event.preventDefault()
-    console.log("hi")
     let user_id
     const user=document.querySelector("#user_txt").value.trim()
     const input_info=document.querySelector("#data_type").value.toLowerCase().trim()
-    getData("users")
+    fetch(prepareURL("users"))
+    .then((responce)=>responce.json())
     .then((data)=>{
         data.forEach(the_user=>{
-            console.log("in foreach")
             if(the_user.username===user)
                 user_id=the_user.id
         })
-        return getData(`${input_info}?userId=${user_id}`)
+        return fetch(prepareURL(`${input_info}?userId=${user_id}`))
     })
+    .then((responce)=>responce.json())
     .then((data)=>{
         data.forEach(itr=>addLi(itr.body,datas))
     })
 })
 button_users.addEventListener("click",(event)=>{
     event.preventDefault()
-    getData("users")
+    fetch(prepareURL("users"))
+    .then(responce=>responce.json())
     .then((data)=>{
         data.forEach( user => addLi(user.username,userNames));
     })
@@ -50,21 +51,6 @@ function deleteLi()
     usersLi.forEach(user =>{
         if(user.parentElement.parentElement.className==="output")
             user.remove()
-    })
-}
-function getData(key){
-    return new Promise((resolve,reject)=>{
-        const xhr=new XMLHttpRequest()
-        xhr.addEventListener("readystatechange",()=>{
-            try {
-                if(xhr.readyState===4 && xhr.status===200)
-                    resolve(JSON.parse(xhr.responseText))
-            } catch (error) {
-                 reject(error) 
-            }
-        })
-        xhr.open("GET",prepareURL(key))
-        xhr.send()
     })
 }
 function prepareURL(key)
