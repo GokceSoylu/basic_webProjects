@@ -33,3 +33,9 @@ Goal is learning promise and some practice
 in the poroject you print usernames on secreen later you can access info you want
 
 for example the user's coments posts etc
+
+## Search Images
+
+Goal is using information I learned so far(fetch, events, css etc)
+
+In this project you can access images you search
