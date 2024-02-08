@@ -1,0 +1,43 @@
+#form{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#search_input{
+    padding: 5px;
+    width: 60%;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px lightgray;
+}
+#search_btn{
+    border-radius: 5px;
+    width: 140px;
+    border: 1px solid lightgrey;
+    background-color: rgb(108, 106, 106);
+    box-shadow: 1px 3px 5px rgb(88, 88, 88);
+    color: whitesmoke;
+}
+#clear_btn{
+    width: 140px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    background-color: wheat;
+    /* box-shadow: 1px 3px 5px; */
+    color: black;
+}
+.images-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    box-shadow: 5px 5px 8px lightgray;
+}
