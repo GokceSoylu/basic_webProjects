@@ -39,3 +39,11 @@ for example the user's coments posts etc
 Goal is using information I learned so far(fetch, events, css etc)
 
 In this project you can access images you search
+
+## Currency Converter
+
+Goal is using information I learned so far(OOP, fetch, events, css etc)
+
+In this project you can convert currency :)) 
+
+also with double arrow you can change currency type easly
