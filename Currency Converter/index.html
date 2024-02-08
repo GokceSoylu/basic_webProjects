@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <div  id="container">
+        <div id="main">
+            <div id="header-wrapper">
+                <h4>Currency Converter</h4>
+            </div>
+            <div id="content-wrapper">
+                <input type="number" placeholder="amount" id="amount">
+                <select id="first-select">
+                    <option>EUR</option>
+                    <option>TRY</option>
+                    <option>USD</option>
+                </select>
+                <div id="buttons-wrapper">
+                    <button id="converter-button"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button id="convert-button"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                </div>
+                <select id="second-select">
+                    <option>EUR</option>
+                    <option>TRY</option>
+                    <option>USD</option>
+                </select>
+                <input id="result" type="number" placeholder="result" readonly>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="currency.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#main{
+    width: 700px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(227, 244, 244);
+}
+#header-wrapper > h4
+{
+    font-size: larger;
+} 
+#content-wrapper{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    margin: 0px 30px;
+}
+#amount{
+    margin: 0px 5px;
+    padding: 3px;
+}
+#result{
+    margin: 0px 5px;
+    padding: 3px;
+}
+select{
+    margin: 0px 5px;
+    padding: 5px;
+}
